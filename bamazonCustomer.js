@@ -69,7 +69,7 @@ function display() {
                         connection.query("UPDATE products SET ? WHERE ?", [{ stock_quantity: temp }, { item_id: id }], function (err, updateRes) {
                             if (err) console.log(err)
 
-                            console.log("Quantity Updated");
+                            // console.log("Quantity Updated");
                             var p = res[0].price * parseInt(answer.quantity);
                             console.log("Total Cost: $" + p +".00");
                         })
@@ -79,6 +79,7 @@ function display() {
                     }
                     console.log("Purchase successful!")
                     // updatedTable()
+
                     connection.end();
                 });
             });
